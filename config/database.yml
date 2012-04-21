@@ -1,0 +1,22 @@
+
+development:
+  adapter: mysql
+  database: leave_management
+  username: root
+  password: root
+  pool: 5
+  timeout: 5000
+
+test:
+  adapter: mysql
+  database: leave_management_test
+  username: root
+  password: root
+  pool: 5
+  timeout: 5000
+
+production:
+  adapter: sqlite3
+  database: db/production.sqlite3
+  pool: 5
+  timeout: 5000
