@@ -1,0 +1,2 @@
+$("#see").html("<%= escape_javascript render 'calender', :days => @days, :date => @date %>");
+$("#menu").html("<%= escape_javascript link_to 'next', holidays_path(:next => @next), :remote=>true, :id =>"next" %>")

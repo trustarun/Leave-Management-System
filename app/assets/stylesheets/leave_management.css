@@ -1,0 +1,38 @@
+body { background-color: #5f7395; color: #333; }
+
+body, p, ol, ul, td {
+  font-family: verdana, arial, helvetica, sans-serif;
+  font-size:   13px;
+  line-height: 18px;
+}
+
+pre {
+  background-color: #eee;
+  padding: 10px;
+  font-size: 11px;
+}
+
+a { color: #000; }
+a:visited { color: #666; }
+a:hover { color: #fff; background-color:#000; }
+
+#main {
+	background-color: #fff;
+	border: solid #000 1px;
+	margin: 5em;
+	height: 30em;
+	padding: 1em;
+}
+
+#notice {
+	background-color: #e1facf;
+	border: solid #97C36d 1px;
+	padding: 0.5em;
+}
+
+table a {color:#fff; text-decoration: none!important}
+.col_7 a{color:red; text-decoration: none!important}
+.col_6 a{color:orange; ; text-decoration:none !important}
+.col_7 span{color:red; text-decoration: none!important}
+.col_6 span{color:orange; ; text-decoration:none !important}
+.set {color:yellow!important}

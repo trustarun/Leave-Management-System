@@ -1,0 +1,46 @@
+<%=@date.year%> <br />
+<%=@date.month%>
+<table class="calender">
+  <th>
+  <td>Mon</td>
+  <td>Tue</td>
+  <td>Wed</td>
+  <td>Thru</td>
+  <td>Fri</td>
+  <td>Sat</td>
+  <td>Sun</td>
+  </th>
+<%@days.each do |week|%>
+  <tr>
+   <%col_no=1%>
+<%week.each do |week_day|%>
+    <% if col_no == 6 || col_no == 7 %>
+    <td  class ="col_<%= col_no %>"><span><%=week_day%></span> </td>
+    <%else%>
+    <td  class ="col_<%= col_no %>"><a id="<%=week_day%>" href="javascript:void(0)" class="<%=@holiday.include?(week_day) ? 'set' : ''%>"><%=week_day%></a></td>
+    <%end%>
+    <%col_no = col_no + 1%>
+    <%=hidden_field_tag "month[#{week_day}]"%>
+    <%end%>
+  </tr>
+<%end%>
+
+
+</table>
+<script type="text/javascript">
+jQuery("table a").click(function(){
+val_at = $(this).attr('id');
+current_input = "month_"+val_at;
+if ($("#"+current_input).val()== "")
+{
+$("#"+current_input).val(val_at);
+$(this).addClass('set');
+}
+else
+{
+$("#"+current_input).val('');
+$(this).removeClass('set');
+}
+})
+
+</script>
