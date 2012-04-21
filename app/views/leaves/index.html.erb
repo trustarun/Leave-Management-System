@@ -1,2 +1,31 @@
-<h1>Leaves#index</h1>
-<p>Find me in app/views/leaves/index.html.erb</p>
+<%if @leaves.present? %>
+  <%  @leaves.each do |leave| %>
+    <div class="form_containe">
+      <table>
+        <th>
+        <td> Slno.</td>
+        <td> Start Date</td>
+        <td> End Date </td>
+        <td> Reason </td>
+        <td> Status </td>
+        <td> Action</td>
+        </th>
+        <%  count = 0 %>
+        <% @leaves.each do |leave| %>
+          <tr>
+            <td> <%  count = count + 1 %> </td>
+            <td> <%=  leave.start_date %></td>
+            <td> <%=  leave.end_date %></td>
+            <td> <%=  leave.reason_for_leave %> </td>
+            <td> Status </td>
+            <td> <%= link_to 'Edit', edit_leafe_path(1) %> &nbsp;|&nbsp;<%= link_to 'Delete', leafe_path(1), :method => :delete, :confirm => "You are going to delete a Leave" %> </td>
+          </tr>
+        <%end%>
+
+      </table>
+
+    </div>
+  <% end %>
+<% else %>
+  <div> You do not have any pending leaves </div>
+<%  end %>

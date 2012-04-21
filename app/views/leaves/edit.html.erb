@@ -1,2 +1,9 @@
-<h1>Leaves#edit</h1>
-<p>Find me in app/views/leaves/edit.html.erb</p>
+<%= form_for(@leave) do |f| %>
+  <div class="error_msg">
+    <%= render "error_messages", :target => @leave %>
+  </div>
+  <div class="form_containe">
+    <%= render 'form', :f => f %>
+    <%=  submit_tag "save" %>
+  </div>
+<% end %>
