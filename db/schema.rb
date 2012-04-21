@@ -15,7 +15,7 @@ ActiveRecord::Schema.define(:version => 20120421061542) do
   create_table "holidays", :force => true do |t|
     t.integer  "day"
     t.string   "wday"
-    t.string   "month"
+    t.integer  "month"
     t.integer  "year"
     t.string   "reason"
     t.datetime "created_at", :null => false

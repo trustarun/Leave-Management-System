@@ -15,30 +15,42 @@
    <%col_no=1%>
 <%week.each do |week_day|%>
     <% if col_no == 6 || col_no == 7 %>
-    <td  class ="col_<%= col_no %>"><span><%=week_day%></span> </td>
+    <td  class ="col_<%= col_no %>">
+      <span><%=week_day%></span>
+      <%=hidden_field_tag "day[#{week_day}]", week_day %>
+    </td>
     <%else%>
-    <td  class ="col_<%= col_no %>"><a id="<%=week_day%>" href="javascript:void(0)" class="<%=@holiday.include?(week_day) ? 'set' : ''%>"><%=week_day%></a></td>
+    <td  class ="col_<%= col_no %>">
+      <%  if @holiday.include?(week_day) %>
+        <a id="<%=week_day%>" href="javascript:void(0)" class="set"><%=week_day%></a>
+        <%=hidden_field_tag "day[#{week_day}]", week_day %>
+      <% else %>
+          <a id="<%=week_day%>" href="javascript:void(0)" ><%=week_day%></a>
+          <%=hidden_field_tag "day[#{week_day}]"%>
+      <% end %>
+      
+    </td>
     <%end%>
     <%col_no = col_no + 1%>
-    <%=hidden_field_tag "month[#{week_day}]"%>
     <%end%>
   </tr>
 <%end%>
-
-
 </table>
+<%=  hidden_field_tag 'month', @date.month %>
+<%=  hidden_field_tag 'year', @date.year %>
+<%=  hidden_field_tag 'next', @next %>
 <script type="text/javascript">
 jQuery("table a").click(function(){
 val_at = $(this).attr('id');
-current_input = "month_"+val_at;
-if ($("#"+current_input).val()== "")
+current_day = "day_"+val_at;
+if ($("#"+current_day).val()== "")
 {
-$("#"+current_input).val(val_at);
+$("#"+current_day).val(val_at);
 $(this).addClass('set');
 }
 else
 {
-$("#"+current_input).val('');
+$("#"+current_day).val('');
 $(this).removeClass('set');
 }
 })

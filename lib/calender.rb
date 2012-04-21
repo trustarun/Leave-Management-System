@@ -40,4 +40,8 @@ module LeaveCalender
     all_week
   end
 
+  def day_of_week(year, month, day)
+    Date.new(year, month, day).strftime("%a")
+  end
+
 end
