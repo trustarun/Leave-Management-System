@@ -1,5 +1,3 @@
-
-jQuery(document).ready(function(){
     var browse_calender = function()
     {
         jQuery("table a").click(function(){
@@ -17,6 +15,8 @@ jQuery(document).ready(function(){
             }
         })
     }
+
+jQuery(document).ready(function(){
 
     $("#leave_start_date").datepicker({
         dateFormate : 'dd-mm-yy'
