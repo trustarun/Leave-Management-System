@@ -1,4 +1,7 @@
 <div class="form_container">
+  <div class ="headline">
+    Browse Leave Calender
+  </div>
   <div id ="menu" >
     <%= render 'browse_calender' %>
   </div>
@@ -6,7 +9,7 @@
     <%=  form_tag holidays_path  do %>
       <div id="see"><%= render 'calender' %> </div>
       <div class="clear"></div>
-      <div id ="bottom_menu">
+      <div class ="bottom_line">
         <%=submit_tag 'save'%>
       </div>
     <% end %>
