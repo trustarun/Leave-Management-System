@@ -1,15 +1,13 @@
-<%=@date.year%> <br />
-<%=@date.month%>
 <table class="calender">
-  <th>
-  <td>Mon</td>
-  <td>Tue</td>
-  <td>Wed</td>
-  <td>Thru</td>
-  <td>Fri</td>
-  <td>Sat</td>
-  <td>Sun</td>
-  </th>
+  <tr>
+  <th>Mon</th>
+  <th>Tue</th>
+  <th>Wed</th>
+  <th>Thru</th>
+  <th>Fri</th>
+  <th>Sat</th>
+  <th>Sun</th>
+  </tr>
 <%@days.each do |week|%>
   <tr>
    <%col_no=1%>
@@ -38,6 +36,7 @@
 </table>
 <%=  hidden_field_tag 'month', @date.month %>
 <%=  hidden_field_tag 'year', @date.year %>
+<%=  hidden_field_tag 'day', @date.day %>
 <%=  hidden_field_tag 'next', @next %>
 
 <script type="text/javascript">

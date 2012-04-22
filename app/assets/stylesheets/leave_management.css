@@ -4,28 +4,56 @@ body{background-color:black}
 .mainContentHolder{ height: auto; min-height:550px; }
 .superFooter{ background: url(bgHeader.png) repeat-x; padding: 10px; height: 85px; border-top: 1px solid red; }
 .superFooter span{color:red;font-size:14px;
-				height:30px;outline:medium none;text-decoration:none;font-weight:700;cursor:pointer; text-shadow: 0 -1px #333;}
+                  height:30px;outline:medium none;text-decoration:none;font-weight:700;cursor:pointer; text-shadow: 0 -1px #333;}
 .logo {color:Maroon;display:block;font-size:20px; text-decoration: underline;
-				height:30px;outline:medium none;padding-top:25px; padding-left:340px;font-weight:700;text-shadow: 0 -1px #333;}
+       height:30px;outline:medium none;padding-top:25px; padding-left:340px;font-weight:700;text-shadow: 0 -1px #333;}
 .superHeader, .mainMenuHolder{height:90px}
 
 .topMenu{ position:absolute; top:75px; right:176px; width:300px; text-align:right; padding-right:40px; }
 .topMenu a{color:red;font-size:14px;
-				height:30px;outline:medium none;text-decoration:none;font-weight:700;cursor:pointer; text-shadow: 0 -1px #333;}
+           height:30px;outline:medium none;text-decoration:none;font-weight:700;cursor:pointer; text-shadow: 0 -1px #333;}
 .topMenu a:hover{color:blueviolet;}
 .mainMenu{position:absolute; top:55px; }
 .mainMenu li {display:block; line-height:30px; float:left; list-style:none; margin-right:2px;}
 .mainMenu li a{color:red;display:block;font-size:14px;
-				height:30px;outline:medium none;padding-left:15px;text-decoration:none;font-weight:700;cursor:pointer; text-shadow: 0 -1px #333;}
+               height:30px;outline:medium none;padding-left:15px;text-decoration:none;font-weight:700;cursor:pointer; text-shadow: 0 -1px #333;}
 .mainMenu li.selected a,.mainMenu li a:hover{color:blueviolet;}
 .mainMenu li.selected a,.mainMenu li a:hover{color:blueviolet;}
 .mainMenu li a span{display:block;padding-right:15px;}
 .mainMenu li.selected a span,.mainMenu li a:hover span{text-shadow: 0 -1px #fff;}
 
 .mainContent{ padding:20px; background-color:#fff; -moz-box-shadow: 0 0 10px #888;  box-shadow: 0 0 10px #888; -webkit-box-shadow:0 0 10px #888;
--moz-border-radius: 0 0 6px 6px; -webkit-border-radius:	0 0 6px 6px; border-radius:0 0 6px 6px; border:1px solid #ea008f; border-top: none;}
+              -moz-border-radius: 0 0 6px 6px; -webkit-border-radius:	0 0 6px 6px; border-radius:0 0 6px 6px; border:1px solid #ea008f; border-top: none;}
 
-
+#menu{width:700px;float: left;margin-left:100px;margin-bottom: 20px;margin-top: 80px;background-color: #ffffff}
+#see{width:700px;float: left;padding-left: 100px}
+.prev{float: left;color: green;padding-left: 10px}
+.date{width: 60px;margin-left: 250px}
+.next{float: right; color: green;padding-right: 10px}
+.prev a, .next a {text-decoration: none; color: green}
+table.calender {
+    font-family: verdana,arial,sans-serif;
+    font-size:11px;
+    color:#333333;
+    border-width: 1px;
+    border-color: #666666;
+    border-collapse: collapse;
+    width:100%
+}
+table.calender th {
+    border-width: 1px;
+    padding: 8px;
+    border-style: solid;
+    border-color: #666666;
+    background-color: #dedede;
+}
+table.calender td {
+    border-width: 1px;
+    padding: 8px;
+    border-style: solid;
+    border-color: #666666;
+    background-color: #blue;
+}
 
 table a {color:#fff; text-decoration: none!important}
 .col_7 a{color:red; text-decoration: none!important}

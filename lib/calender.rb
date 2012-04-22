@@ -37,7 +37,11 @@ module LeaveCalender
         next_week << week_day
       end
     end
-    all_week
+    last_week = all_week.pop
+    for day in last_week.size+1..7
+      last_week << " "
+    end
+    all_week << last_week
   end
 
   def day_of_week(year, month, day)
