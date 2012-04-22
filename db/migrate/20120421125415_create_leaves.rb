@@ -5,7 +5,7 @@ class CreateLeaves < ActiveRecord::Migration
       t.date :end_date
       t.integer :total_days
       t.text :reason_for_leave
-      t.integer :employee_id
+      t.integer :user_id
       t.integer :manager_id
       t.string :status
       t.text :reason_for_rejection

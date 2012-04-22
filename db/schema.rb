@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120421125415) do
+ActiveRecord::Schema.define(:version => 20120422053355) do
 
   create_table "holidays", :force => true do |t|
     t.integer  "day"
@@ -27,12 +27,39 @@ ActiveRecord::Schema.define(:version => 20120421125415) do
     t.date     "end_date"
     t.integer  "total_days"
     t.text     "reason_for_leave"
-    t.integer  "employee_id"
+    t.integer  "user_id"
     t.integer  "manager_id"
     t.string   "status"
     t.text     "reason_for_rejection"
     t.datetime "created_at",           :null => false
     t.datetime "updated_at",           :null => false
+  end
+
+  create_table "roles", :force => true do |t|
+    t.string   "name"
+    t.integer  "level"
+    t.integer  "band"
+    t.integer  "min_salary"
+    t.integer  "max_salary"
+    t.integer  "paid_leaves"
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
+  end
+
+  create_table "users", :force => true do |t|
+    t.string   "email"
+    t.string   "first_name"
+    t.string   "last_name"
+    t.string   "password"
+    t.string   "confirm_password"
+    t.integer  "manager_id"
+    t.integer  "role_id"
+    t.date     "joining_date"
+    t.date     "end_date"
+    t.integer  "salary"
+    t.integer  "remaining_leaves"
+    t.datetime "created_at",       :null => false
+    t.datetime "updated_at",       :null => false
   end
 
 end
