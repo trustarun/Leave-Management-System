@@ -1,34 +1,31 @@
-body { background-color: yellow; color: #333; }
+body{background-color:black}
+#main_container{background-image:url(bgBody.png); width:1000px;margin-left: 105px; float: left }
+.superHeader{ background: url(bgHeader.png) repeat-x; }
+.mainContentHolder{ height: auto; min-height:550px; }
+.superFooter{ background: url(bgHeader.png) repeat-x; padding: 10px; height: 85px; border-top: 1px solid red; }
+.superFooter span{color:red;font-size:14px;
+				height:30px;outline:medium none;text-decoration:none;font-weight:700;cursor:pointer; text-shadow: 0 -1px #333;}
+.logo {color:Maroon;display:block;font-size:20px; text-decoration: underline;
+				height:30px;outline:medium none;padding-top:25px; padding-left:340px;font-weight:700;text-shadow: 0 -1px #333;}
+.superHeader, .mainMenuHolder{height:90px}
 
-body, p, ol, ul, td {
-  font-family: verdana, arial, helvetica, sans-serif;
-  font-size:   13px;
-  line-height: 18px;
-}
+.topMenu{ position:absolute; top:75px; right:176px; width:300px; text-align:right; padding-right:40px; }
+.topMenu a{color:red;font-size:14px;
+				height:30px;outline:medium none;text-decoration:none;font-weight:700;cursor:pointer; text-shadow: 0 -1px #333;}
+.topMenu a:hover{color:blueviolet;}
+.mainMenu{position:absolute; top:55px; }
+.mainMenu li {display:block; line-height:30px; float:left; list-style:none; margin-right:2px;}
+.mainMenu li a{color:red;display:block;font-size:14px;
+				height:30px;outline:medium none;padding-left:15px;text-decoration:none;font-weight:700;cursor:pointer; text-shadow: 0 -1px #333;}
+.mainMenu li.selected a,.mainMenu li a:hover{color:blueviolet;}
+.mainMenu li.selected a,.mainMenu li a:hover{color:blueviolet;}
+.mainMenu li a span{display:block;padding-right:15px;}
+.mainMenu li.selected a span,.mainMenu li a:hover span{text-shadow: 0 -1px #fff;}
 
-pre {
-  background-color: #eee;
-  padding: 10px;
-  font-size: 11px;
-}
+.mainContent{ padding:20px; background-color:#fff; -moz-box-shadow: 0 0 10px #888;  box-shadow: 0 0 10px #888; -webkit-box-shadow:0 0 10px #888;
+-moz-border-radius: 0 0 6px 6px; -webkit-border-radius:	0 0 6px 6px; border-radius:0 0 6px 6px; border:1px solid #ea008f; border-top: none;}
 
-a { color: #000; }
-a:visited { color: #666; }
-a:hover { color: #fff; background-color:#000; }
 
-#main {
-	background-color: #fff;
-	border: solid #000 1px;
-	margin: 5em;
-	height: 30em;
-	padding: 1em;
-}
-
-#notice {
-	background-color: #e1facf;
-	border: solid #97C36d 1px;
-	padding: 0.5em;
-}
 
 table a {color:#fff; text-decoration: none!important}
 .col_7 a{color:red; text-decoration: none!important}

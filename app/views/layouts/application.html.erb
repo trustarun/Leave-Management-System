@@ -1,15 +1,24 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <title>LMS-|<%= @title %></title>
-  <%= stylesheet_link_tag    "application", :media => "all" %>
-  <%= javascript_include_tag "application" %>
-  <%= csrf_meta_tags %>
-</head>
-<body>
-<%= flash[:notice] if flash[:notice] %>
-<%= yield %>
-
-</body>
+  <head>
+    <title>SimpleCRM</title>
+    <link rel="shortcut icon" href="/assets/favicon.ico" />
+    <%= stylesheet_link_tag  'application' %>
+    <%= javascript_include_tag  'application' %>
+    <%= csrf_meta_tags %>
+  </head>
+  <body>
+    <div id="main_container">
+      <%= render :partial => 'layouts/header' %>
+      <div style="clear: both"></div>
+      <div class="mainContentHolder">
+        <div class="shadowMask">
+          <%= flash[:notice] if flash[:notice] %>
+          <%= yield %>
+        </div>
+      </div>
+      <div style="clear: both"></div>
+      <%= render :partial => 'layouts/footer' %>
+    </div>
+  </body>
 </html>
-
