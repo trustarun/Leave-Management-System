@@ -14,5 +14,9 @@ class User < ActiveRecord::Base
   def full_name
     self.first_name
   end
+
+  def is_admin?
+    self.role.name == "admin" if self.role_id
+  end
   
 end
