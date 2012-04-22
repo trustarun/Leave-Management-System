@@ -1,6 +1,6 @@
-
+<%=  link_to 'Logout', destroy_user_session_path, :method => 'delete'%>
 <div id ="menu"><%= link_to 'next', holidays_path(:next => @next), :remote=>true, :id =>"next" %></div>
 <%=  form_tag holidays_path  do %>
-<div id="see"><%= render 'calender' %> </div>
-<%=submit_tag 'save'%>
+  <div id="see"><%= render 'calender' %> </div>
+  <%=submit_tag 'save'%>
 <%  end %>

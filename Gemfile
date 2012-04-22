@@ -6,6 +6,7 @@ gem 'nokogiri'
 gem 'execjs'
 gem 'therubyracer'
 gem 'jquery-rails'
+gem 'devise'
 
 group :development do
   gem 'rspec-rails', '2.7.0'
