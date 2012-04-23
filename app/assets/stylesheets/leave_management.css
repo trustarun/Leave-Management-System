@@ -8,7 +8,7 @@ body{background-color:black}
 .logo {color:Maroon;display:block;font-size:20px; text-decoration: underline;
        height:30px;outline:medium none;padding-top:25px; padding-left:340px;font-weight:700;text-shadow: 0 -1px #333;}
 .superHeader, .mainMenuHolder{height:90px}
-
+.shadowMask {overflow: hidden; padding-bottom: 10px;}
 .topMenu{ position:absolute; top:75px; right:176px; width:300px; text-align:right; padding-right:40px; }
 .topMenu a{color:red;font-size:14px;
            height:30px;outline:medium none;text-decoration:none;font-weight:700;cursor:pointer; text-shadow: 0 -1px #333;}
@@ -25,10 +25,20 @@ body{background-color:black}
 .mainContent{ padding:20px; background-color:#fff; -moz-box-shadow: 0 0 10px #888;  box-shadow: 0 0 10px #888; -webkit-box-shadow:0 0 10px #888;
               -moz-border-radius: 0 0 6px 6px; -webkit-border-radius:	0 0 6px 6px; border-radius:0 0 6px 6px; border:1px solid #ea008f; border-top: none;}
 
-#menu{width:700px;float: left;margin-left:100px;margin-bottom: 20px;margin-top: 30px;background-color: #ffffff}
-.bottom_line{width:700px;float: left;margin-left:100px;margin-bottom: 20px;margin-top: 30px;background-color: #ffffff;text-align: center}
-.headline{width:700px;float: left;margin-left:100px;margin-top: 30px;background-color: none;text-align: center}
-#see{width:700px;float: left;padding-left: 100px}
+.form_container{width:700px;float: left;margin-left:140px;margin-top: 30px;}
+
+.flashNotice{width:700px;float: left;margin-left:160px;margin-top: 30px;color: green;text-align: center}
+#menu{width:700px;float: left;margin-bottom: 20px;margin-top: 30px;background-color: #ffffff}
+.bottom_line{width:700px;float: left;margin-bottom: 20px;margin-top: 30px;background-color: #ffffff;text-align: center}
+.bottom_line_wb{width:700px;float: left;margin-bottom: 20px;margin-top: 30px;text-align: center}
+.headline{width:700px;float: left;margin-top: 30px;margin-bottom: 30px;background-color: none;text-align: center}
+.l_row{height: 30px;line-height: 40px;}
+.l_label{width: 300px;float:left;border-bottom: solid 1px yellow;border-top: solid 1px yellow}
+.r_label{float: left;border-bottom: solid 1px yellow;border-top: solid 1px yellow}
+.line{color: yellow;font-size: 1px}
+
+
+#see{width:700px;float: left;}
 .prev{float: left;color: green;padding-left: 10px}
 .date{width: 60px;margin-left: 250px}
 .next{float: right; color: green;padding-right: 10px}

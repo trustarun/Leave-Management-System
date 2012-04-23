@@ -1,17 +1,26 @@
-<h2>Sign in</h2>
+<div class="form_container">
+  <div class ="headline">
+    Sign In to Manage Your Leaves
+  </div>
+  <%= form_for(resource, :as => resource_name, :url => session_path(resource_name)) do |f| %>
+    <div class="l_row">
+      <span class="l_label">email</span>
+      <span class="r_label"><%= f.email_field :email %></span>
+    </div>
 
-<%= form_for(resource, :as => resource_name, :url => session_path(resource_name)) do |f| %>
-  <div><%= f.label :email %><br />
-  <%= f.email_field :email %></div>
+    <div class="l_row">
+      <span class="l_label">password</span>
+      <span class="r_label"> <%= f.password_field :password %></span>
+    </div>
 
-  <div><%= f.label :password %><br />
-  <%= f.password_field :password %></div>
-
-  <% if devise_mapping.rememberable? -%>
-    <div><%= f.check_box :remember_me %> <%= f.label :remember_me %></div>
-  <% end -%>
-
-  <div><%= f.submit "Sign in" %></div>
-<% end %>
-
-<%= render "links" %>
+    <% if devise_mapping.rememberable? -%>
+      <div class ="bottom_line_wb"<%= f.check_box :remember_me %> <%= f.label :remember_me %></div>
+    <% end -%>
+    <div class ="bottom_line_wb" style="margin-top: 0px">
+      <%= f.submit "Sign in" %>
+    </div>
+  <% end %>
+  <div class ="bottom_line_wb" style="margin-top:0px">
+    <%= render "links" %>
+  </div>
+</div>

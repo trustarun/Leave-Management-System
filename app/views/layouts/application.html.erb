@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>SimpleCRM</title>
+    <title>Leave-Management</title>
     <link rel="shortcut icon" href="/assets/favicon.ico" />
     <%= stylesheet_link_tag  'application' %>
     <%= javascript_include_tag  'application' %>
@@ -13,7 +13,9 @@
       <div style="clear: both"></div>
       <div class="mainContentHolder">
         <div class="shadowMask">
-          <%= flash[:notice] if flash[:notice] %>
+          <%  if flash[:notice] %>
+          <div class="flashNotice"><%= flash[:notice] %></div>
+          <%end%>
           <%= yield %>
         </div>
       </div>

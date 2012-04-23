@@ -1,6 +1,6 @@
 class Users::RegistrationsController < Devise::RegistrationsController
   prepend_before_filter :require_no_authentication, :only => [:cancel ]
-
+  before_filter :require_admin, :only => [:create, :new ]
   def new
     resource = build_resource({})
     respond_with resource
@@ -29,6 +29,15 @@ class Users::RegistrationsController < Devise::RegistrationsController
     options = devise_i18n_options(options) if respond_to?(:devise_i18n_options, true)
     message = "Employee Created Successfully"
     flash[key] = message if message.present?
+  end
+
+  def require_admin
+    if current_user && current_user.is_admin?
+      true
+    else
+      flash[:notice] = "Contact admin to Create your account"
+      redirect_to new_user_session_path
+    end
   end
 
 end
