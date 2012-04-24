@@ -14,7 +14,11 @@ class User < ActiveRecord::Base
   end
 
   def is_admin?
-    self.role.name == "admin" if self.role_id
+    self.role.name.downcase == "admin" if self.role_id
+  end
+
+  def is_manager?
+    self.role.name.downcase == "manager" if self.role_id
   end
   
 end

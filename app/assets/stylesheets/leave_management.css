@@ -6,18 +6,18 @@ body{background-color:black}
 .superFooter{ background: url(bgHeader.png) repeat-x; padding: 10px; height: 85px; border-top: 1px solid red; }
 .superFooter span{color:red;font-size:14px;
                   height:30px;outline:medium none;text-decoration:none;font-weight:700;cursor:pointer; text-shadow: 0 -1px #333;}
-.logo {color:Maroon;display:block;font-size:20px; text-decoration: underline;
-       height:30px;outline:medium none;padding-top:25px; padding-left:340px;font-weight:700;text-shadow: 0 -1px #333;}
+.logo {color:fuchsia;display:block;font-size:20px; text-decoration: underline;
+       height:30px;outline:medium none;padding-top:12px; padding-left:340px;font-weight:700;text-shadow: 0 -1px #333;}
 .superHeader, .mainMenuHolder{height:90px}
 .shadowMask {overflow: hidden; padding-bottom: 10px;}
 .topMenu{ position:absolute; top:75px; right:176px; width:300px; text-align:right; padding-right:40px; }
 .topMenu a{color:red;font-size:14px;
            height:30px;outline:medium none;text-decoration:none;font-weight:700;cursor:pointer; text-shadow: 0 -1px #333;}
 .topMenu a:hover{color:blueviolet;}
-.mainMenu{position:absolute; top:55px; }
-.mainMenu li {display:block; line-height:30px; float:left; list-style:none; margin-right:2px;}
-.mainMenu li a{color:red;display:block;font-size:14px;
-               height:30px;outline:medium none;padding-left:15px;text-decoration:none;font-weight:700;cursor:pointer; text-shadow: 0 -1px #333;}
+.mainMenu{position:absolute; top:48px; }
+.mainMenu li {display:block; line-height:30px; float:left; list-style:none; margin-right:2px;border: solid 1px fuchsia}
+.mainMenu li a{color:red;display:block;font-size:14px;padding-right: 10px;
+               height:30px;outline:medium none;padding-left:10px;text-decoration:none;font-weight:700;cursor:pointer; text-shadow: 0 -1px #333;}
 .mainMenu li.selected a,.mainMenu li a:hover{color:blueviolet;}
 .mainMenu li.selected a,.mainMenu li a:hover{color:blueviolet;}
 .mainMenu li a span{display:block;padding-right:15px;}
@@ -27,7 +27,7 @@ body{background-color:black}
               -moz-border-radius: 0 0 6px 6px; -webkit-border-radius:	0 0 6px 6px; border-radius:0 0 6px 6px; border:1px solid #ea008f; border-top: none;}
 
 .form_container{width:700px;float: left;margin-left:140px;margin-top: 30px;}
-
+#show_container .r_label{width:300px;border-bottom: solid 1px Fuchsia;border-top: solid 1px Fuchsia}
 .flashNotice{width:700px;float: left;margin-left:160px;margin-top: 30px;color: green;text-align: center}
 #menu{width:700px;float: left;margin-bottom: 20px;margin-top: 30px;background-color: #ffffff}
 .bottom_line{width:700px;float: left;margin-bottom: 20px;margin-top: 30px;background-color: #ffffff;text-align: center}
@@ -78,3 +78,5 @@ table a {color:greenFuchsia; text-decoration: none!important}
 .col_7 span{color:red; text-decoration: none!important}
 .col_6 span{color:red; ; text-decoration:none !important}
 .set {color:red!important}
+.link_button{padding: 10px;background-color: fuchsia;}
+.link_button a{text-decoration: none;color: black}

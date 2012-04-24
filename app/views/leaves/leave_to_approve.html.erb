@@ -1,0 +1,28 @@
+<div class="form_container">
+  <%if @leaves.present? %>
+    <div class ="headline">
+      Approve These Leaves
+    </div>
+    <div class="title_bar"  style="color: Fuchsia; font: bold;background-color: #fff">
+      <span style="padding-left: 10px; width:50px"> Slno.</span>
+      <span style="width:130px"> Start Date</span>
+      <span style="width:130px"> End Date </span>
+      <span style="width:250px"> Reason </span>
+      <span style="width:130px"> Action</span>
+    </div>
+    <%  count = 0 %>
+    <%  @leaves.each do |leave| %>
+      <div class="title_bar">
+        <span style="padding-left: 10px; width: 50px"> <%=  count = count + 1 %> </span>
+        <span style="width:130px"> <%=  leave.start_date %></span>
+        <span style="width:130px"> <%=  leave.end_date %></span>
+        <span style="width:250px"> <%=  leave.reason_for_leave.truncate(25) %> </span>
+        <span style="width:130px">
+          <%= link_to 'Show', leafe_path(leave) %>&nbsp;|&nbsp;<%= link_to 'Approve', approve_leave_leafe_path(leave), :method => 'put' %>
+        </span>
+      </div>
+    <%end%>
+  <% else %>
+    <div> You do not have any leaves to Approve</div>
+  <%  end %>
+</div>

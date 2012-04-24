@@ -1,0 +1,56 @@
+<div id="show_container" class="form_container">
+  <div class ="headline">
+   Leave Detail
+  </div>
+  <div class="l_row">
+    <span class="l_label">
+      Total No of Days:<span class="mandatory"></span>
+    </span>
+    <span class="r_label">
+      10
+    </span>
+  </div>
+  <div class="l_row">
+    <span class="l_label">
+      No of working Days:<span class="mandatory"></span>
+    </span>
+    <span class="r_label">
+      10
+    </span>
+  </div>
+  <div class="l_row">
+    <span class="l_label">
+      Name:<span class="mandatory"></span>
+    </span>
+    <span class="r_label">
+      <%= @leave.user.full_name  %>
+    </span>
+  </div>
+  <div class="l_row">
+    <span class="l_label">
+      Start Date:<span class="mandatory"></span>
+    </span>
+    <span class="r_label">
+      <%= @leave.start_date  %>
+    </span>
+  </div>
+  <div class="l_row">
+    <span class="l_label">
+      End Date:<span class="mandatory"></span>
+    </span>
+    <span class="r_label">
+      <%= @leave.end_date  %>
+    </span>
+  </div>
+  <div class="l_row">
+    <span class="l_label"  style="height:  auto;border-bottom: none">
+      Reason For Leave:<span class="mandatory"></span>
+    </span>
+    <span class="r_label" style="height: auto;border-bottom: none">
+      <%= @leave.reason_for_leave %>
+    </span>
+  </div>
+  <div class ="bottom_line_wb">
+    <span class="link_button"><%= link_to 'Approve', approve_leave_leafe_path(@leave), :method => 'put' %></span>
+  </div>
+</div>
