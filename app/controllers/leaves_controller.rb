@@ -1,6 +1,8 @@
 class LeavesController < ApplicationController
+  before_filter :authenticate_user!
+  
   def index
-    @leaves = Leave.all
+    @leaves = Leave.where(:user_id => current_user.id)
   end
 
   def new
@@ -9,6 +11,9 @@ class LeavesController < ApplicationController
 
   def create
     @leave = Leave.new(params[:leave])
+    @leave.user_id = current_user.id
+    @leave.manager_id = current_user.manager
+    @leave.status = "pending"
     if @leave.valid?
       @leave.save
       redirect_to leaves_path
@@ -24,6 +29,9 @@ class LeavesController < ApplicationController
   def update
     @leave = Leave.find(params[:id])
     @leave.attributes = params[:leave]
+    @leave.user_id = current_user.id
+    @leave.manager_id = current_user.manager
+    @leave.status = "pending"
     if @leave.valid?
       @leave.save
       redirect_to leaves_path

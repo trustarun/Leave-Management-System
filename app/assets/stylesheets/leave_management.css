@@ -1,5 +1,6 @@
 body{background-color:black}
 #main_container{background-image:url(bgBody.png); width:1000px;margin-left: 105px; float: left }
+.welcome{color: darkCyan}
 .superHeader{ background: url(bgHeader.png) repeat-x; }
 .mainContentHolder{ height: auto; min-height:550px; }
 .superFooter{ background: url(bgHeader.png) repeat-x; padding: 10px; height: 85px; border-top: 1px solid red; }
@@ -33,10 +34,12 @@ body{background-color:black}
 .bottom_line_wb{width:700px;float: left;margin-bottom: 20px;margin-top: 30px;text-align: center}
 .headline{width:700px;float: left;margin-top: 30px;margin-bottom: 30px;background-color: none;text-align: center}
 .l_row{height: 30px;line-height: 40px;}
-.l_label{width: 300px;float:left;border-bottom: solid 1px yellow;border-top: solid 1px yellow}
-.r_label{float: left;border-bottom: solid 1px yellow;border-top: solid 1px yellow}
-.line{color: yellow;font-size: 1px}
+.l_label{width: 300px;float:left;border-bottom: solid 1px Fuchsia;border-top: solid 1px Fuchsia}
+.r_label{float: left;border-bottom: solid 1px Fuchsia;border-top: solid 1px Fuchsia}
+.line{color: Fuchsia;font-size: 1px}
 
+.title_bar{width:700px;float: left;height: 30px; line-height: 32px}
+.title_bar span{border-bottom: solid 1px Fuchsia;float:left}
 
 #see{width:700px;float: left;}
 .prev{float: left;color: green;padding-left: 10px}
@@ -69,7 +72,7 @@ table.calender td {
     color:black;
 }
 
-table a {color:greenYellow; text-decoration: none!important}
+table a {color:greenFuchsia; text-decoration: none!important}
 .col_7 a{color:red; text-decoration: none!important}
 .col_6 a{color:red; ; text-decoration:none !important}
 .col_7 span{color:red; text-decoration: none!important}
