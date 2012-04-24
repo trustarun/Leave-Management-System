@@ -7,7 +7,7 @@ class User < ActiveRecord::Base
   belongs_to :role
   has_many :leaves
   has_many :leaves_to_approve, :class_name => "Leave", :foreign_key => "manager_id"
-  validates :email, :first_name, :last_name, :password, :presence => true
+  validates :email, :first_name, :last_name, :password,:manager_id, :role_id, :presence => true
 
   def full_name
     self.first_name + " " + self.last_name

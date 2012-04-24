@@ -16,6 +16,7 @@ class LeavesController < ApplicationController
     @leave.status = "pending"
     if @leave.valid?
       @leave.save
+      LmsMailer.applied_for_leave(@leave, current_user).deliver
       redirect_to leaves_path
     else
       render 'new'
@@ -57,6 +58,7 @@ class LeavesController < ApplicationController
   def approve_leave
       leave = Leave.find(params[:id])
       if leave.update_attribute("status","Approved")
+       LmsMailer.leave_approved(leave,current_user).deliver
        flash[:notice] = "Leave updated successfully"
        redirect_to leave_to_approve_leaves_path
       end
