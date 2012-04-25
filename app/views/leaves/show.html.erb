@@ -7,7 +7,7 @@
       Total No of Days:<span class="mandatory"></span>
     </span>
     <span class="r_label">
-      10
+      <%=@leave.total_days%>
     </span>
   </div>
   <div class="l_row">
@@ -15,7 +15,7 @@
       No of working Days:<span class="mandatory"></span>
     </span>
     <span class="r_label">
-      10
+      <%=@leave.total_days.to_i - @leave.holiday_days.to_i%>
     </span>
   </div>
   <div class="l_row">
@@ -23,7 +23,7 @@
       Name:<span class="mandatory"></span>
     </span>
     <span class="r_label">
-      <%= @leave.user.full_name  %>
+      <%= @leave.user.name  %>
     </span>
   </div>
   <div class="l_row">
