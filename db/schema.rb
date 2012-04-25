@@ -56,7 +56,7 @@ ActiveRecord::Schema.define(:version => 20120422064751) do
     t.date     "joining_date"
     t.date     "end_date"
     t.integer  "salary"
-    t.integer  "remaining_leaves"
+    t.integer  "leave_used"
     t.datetime "created_at",                             :null => false
     t.datetime "updated_at",                             :null => false
     t.string   "encrypted_password",     :default => "", :null => false

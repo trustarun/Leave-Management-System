@@ -10,7 +10,7 @@ class CreateUsers < ActiveRecord::Migration
       t.date    :joining_date
       t.date    :end_date
       t.integer :salary
-      t.integer :remaining_leaves
+      t.integer :leave_used
 
       t.timestamps
     end

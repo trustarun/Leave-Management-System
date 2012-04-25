@@ -51,6 +51,7 @@
     </span>
   </div>
   <div class ="bottom_line_wb">
-    <span class="link_button"><%= link_to 'Approve', approve_leave_leafe_path(@leave), :method => 'put' %></span>
+    <span class="link_button"><%= link_to 'Approve', approve_leave_leafe_path(@leave), :method => 'put' %></span> &nbsp;&nbsp;
+  <span class="link_button"><%= link_to 'Reject', approve_leave_leafe_path(@leave, :rejected => "Rejected"), :method => 'put' %></span>
   </div>
 </div>

@@ -18,10 +18,11 @@
     <li><%= link_to 'Apply', new_leafe_path %></li>
     <li><%= link_to 'Status', leaves_path %></li>
     <li><%= link_to 'History', "#" %></li>
-    <% if current_user.is_manager? %>
+    <% if current_user && current_user.is_manager? %>
       <li><%= link_to 'Approve Leave', leave_to_approve_leaves_path %></li>
     <%  end %>
-    <% if current_user.is_admin? %>
+    <% if current_user &&
+        current_user.is_admin? %>
       <li><%= link_to 'Enroll Employee', new_user_registration_path %></li>
     <%  end %>
   </ul>
