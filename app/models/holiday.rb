@@ -10,11 +10,15 @@ class Holiday < ActiveRecord::Base
 
   def self.holiday_between_leaves(start_date, end_date)
     if start_date.year != end_date.year
-      holidays = Holiday.where(:month => [start_date.month..(end_date << 1).month])
-      jan_holidays = Holiday.where(:month => 1, :year => end_date.year)
-      holidays << jan_holidays if jan_holidays.present?
+      start_month = Holiday.where(:month => start_date.month, :day => [start_date.day..31], :year => start_date.year )
+      end_month = Holiday.where(:month => end_date.month, :day => [1..end_date.day], :year => end_date.year)
+      holidays = start_month + end_month
+    elsif start_date.month != end_date.month
+      start_month = Holiday.where(:month => start_date.month, :day => [start_date.day..31], :year => start_date.year)
+      end_month = Holiday.where(:month => end_date.month, :day => [1..end_date.day], :year => start_date.year)
+      holidays = start_month + end_month
     else
-      holidays = Holiday.where(:month => [start_date.month..end_date.month])
+      holidays = Holiday.where(:month => start_date.month, :day => [start_date.day..end_date.day], :year => start_date.year)
     end
     holidays_in_date_formate = []
     holidays.each do |holiday|

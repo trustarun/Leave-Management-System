@@ -12,18 +12,17 @@ class LeavesController < ApplicationController
 
   def create
     @leave = Leave.new(params[:leave])
-    p "#{params[:leave][:start_date].split("/")}"
-    p "KKKKKKKKKKKKKKKKKKKKKkk"
     start_date = @leave.string_to_date(params[:leave][:start_date])
     end_date = @leave.string_to_date(params[:leave][:end_date])
-    @working_day = working_day_leaves(start_date, end_date)
+    @total_days = total_days_applied(start_date, end_date)
     @holiday_day = Holiday.holiday_between_leaves(start_date, end_date)
+    @working_day = @total_days.reject{ |d| @holiday_day.include?(d)}
     @leave.user_id = current_user.id
     @leave.manager_id = current_user.manager
     @leave.status = "pending"
     @leave.working_days = @working_day.count
     @leave.holiday_days = @holiday_day.count
-    @leave.total_days = @working_day.count + @holiday_day.count
+    @leave.total_days = @total_days.size
     if @leave.valid?
       @leave.save
       LmsMailer.applied_for_leave(@leave, current_user, @working_day, @holiday_day).deliver
@@ -33,10 +32,8 @@ class LeavesController < ApplicationController
     end
   end
 
-  def working_day_leaves(start_date, end_date)
-    holiday_array = Holiday.holiday_between_leaves(start_date, end_date)
-    leave_array = Leave.new.leave_array(start_date, end_date)
-    leave_array.reject{ |d| holiday_array.include?(d)}
+  def total_days_applied(start_date, end_date)
+    Leave.new.leave_array(start_date, end_date)
   end
 
   def show
@@ -72,13 +69,13 @@ class LeavesController < ApplicationController
   end
 
   def approve_leave
-      leave = Leave.find(params[:id])
-      status = params[:rejected].present? ? params[:rejected] : "Approved"
-      if leave.update_attribute("status",status)
-       LmsMailer.leave_approved(leave,current_user).deliver
-       flash[:notice] = "Leave updated successfully"
-       redirect_to leave_to_approve_leaves_path
-      end
+    leave = Leave.find(params[:id])
+    status = params[:rejected].present? ? params[:rejected] : "Approved"
+    if leave.update_attribute("status",status)
+      LmsMailer.leave_approved(leave,current_user).deliver
+      flash[:notice] = "Leave updated successfully"
+      redirect_to leave_to_approve_leaves_path
+    end
   end
 
   def manager_required

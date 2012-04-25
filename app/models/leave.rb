@@ -9,8 +9,8 @@ class Leave < ActiveRecord::Base
     actual_start = actual_start_date(start_date)
     actual_end = actual_end_date(end_date)
     l_date_array = []
-    no_of_days = (actual_end -actual_start).day
-    for no_of_day in 1..10
+    no_of_days = (actual_end -actual_start).to_i
+    for no_of_day in 0..no_of_days
       l_date_array << actual_start
       actual_start = actual_start + 1
     end

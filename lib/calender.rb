@@ -49,11 +49,11 @@ module LeaveCalender
   end
 
   def actual_start_date(date)
-    (date.cwday == 1) ? (date << 2) : date
+    (date.cwday == 1) ? (date - 2) : date
   end
 
   def actual_end_date(date)
-    (date.cwday == 5) ? (date >> 2) : date
+    (date.cwday == 5) ? (date + 2) : date
   end
 
   def day_of_week(year, month, day)
