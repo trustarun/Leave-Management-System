@@ -72,7 +72,7 @@ class LeavesController < ApplicationController
     leave = Leave.find(params[:id])
     status = params[:rejected].present? ? params[:rejected] : "Approved"
     if leave.update_attribute("status",status)
-      LmsMailer.leave_approved(leave,current_user).deliver
+      LmsMailer.leave_approved(leave,current_user, status).deliver
       flash[:notice] = "Leave updated successfully"
       redirect_to leave_to_approve_leaves_path
     end

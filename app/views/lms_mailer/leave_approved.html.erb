@@ -1,7 +1,7 @@
 Hi <%=@user.name%> <br />
 
-Your <%=@leave.total_days%> leave from <%=@leave.start_date.strftime(" %d %b %Y")%>
-to <%=@leave.end_date.strftime(" %d %b %Y")%> has been approved<br/>
+Your <%=@leave.total_days%> days leave from <%=@leave.start_date.strftime(" %d %b %Y")%>
+to <%=@leave.end_date.strftime(" %d %b %Y")%> has been <%=@status%><br/>
 
 Thanks<br/>
 Leave management Team

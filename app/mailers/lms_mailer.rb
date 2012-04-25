@@ -8,9 +8,10 @@ class LmsMailer < ActionMailer::Base
     mail(:to => user.manager.email, :subject => "Leave request for #{leave.total_days}", :from => user.email)
   end
 
-  def leave_approved(leave,user)
+  def leave_approved(leave,user, status)
     @leave = leave
     @user = user
+    @status = status
     mail(:to => leave.user.email, :subject => "Leave request", :from => user.email)
   end
 

@@ -7,8 +7,8 @@
       <span style="padding-left: 10px; width:50px"> Slno.</span>
       <span style="width:130px"> Start Date</span>
       <span style="width:130px"> End Date </span>
-      <span style="width:250px"> Reason </span>
-      <span style="width:130px"> Action</span>
+      <span style="width:180px"> Reason </span>
+      <span style="width:200px"> Action</span>
     </div>
     <%  count = 0 %>
     <%  @leaves.each do |leave| %>
@@ -16,9 +16,11 @@
         <span style="padding-left: 10px; width: 50px"> <%=  count = count + 1 %> </span>
         <span style="width:130px"> <%=  leave.start_date %></span>
         <span style="width:130px"> <%=  leave.end_date %></span>
-        <span style="width:250px"> <%=  leave.reason_for_leave.truncate(25) %> </span>
-        <span style="width:130px">
-          <%= link_to 'Show', leafe_path(leave) %>&nbsp;|&nbsp;<%= link_to 'Approve', approve_leave_leafe_path(leave), :method => 'put' %>
+        <span style="width:180px"> <%=  leave.reason_for_leave.truncate(25) %> </span>
+        <span style="width:200px">
+          <%= link_to 'Show', leafe_path(leave) %>|
+          <%= link_to 'Approve', approve_leave_leafe_path(leave), :method => 'put' %> |
+          <%= link_to 'Reject', approve_leave_leafe_path(leave, :rejected => "Rejected"), :method => 'put' %>
         </span>
       </div>
     <%end%>
