@@ -1,15 +1,14 @@
 <div class="form_container">
   <%if @leaves.present? %>
-      <div class ="headline">
-      Your Leave Status
+    <div class ="headline">
+      Your Leave History
     </div>
     <div class="title_bar"  style="color: Fuchsia; font: bold;background-color: #fff">
       <span style="padding-left: 10px; width:50px"> Slno.</span>
       <span style="width:130px"> Start Date</span>
       <span style="width:130px"> End Date </span>
-      <span style="width:150px"> Reason </span>
+      <span style="width:280px"> Reason </span>
       <span style="width:100px"> Status </span>
-      <span style="width:130px"> Action</span>
     </div>
     <%  count = 0 %>
     <%  @leaves.each do |leave| %>
@@ -17,14 +16,11 @@
         <span style="padding-left: 10px; width: 50px"> <%=  count = count + 1 %> </span>
         <span style="width:130px"> <%=  leave.start_date %></span>
         <span style="width:130px"> <%=  leave.end_date %></span>
-        <span style="width:150px"> <%=  leave.reason_for_leave.truncate(15) %> </span>
-        <span style="width:100px;color:red"> <%=leave.status%> </span>
-        <span style="width:130px">
-          <%= link_to 'Edit', edit_leafe_path(leave) %> &nbsp;|&nbsp;<%= link_to 'Delete', leafe_path(leave), :method => :delete, :confirm => "You are going to delete a Leave" %>
-        </span>
+        <span style="width:280px"> <%=  leave.reason_for_leave.truncate(30) %> </span>
+        <span style="width:100px;"> <%=leave.status%> </span>
       </div>
     <%end%>
-<% else %>
-  <div> You do not have any pending leaves </div>
-<%  end %>
+  <% else %>
+    <div> You have not applied for any leaves till now </div>
+  <%  end %>
 </div>

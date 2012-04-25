@@ -1,9 +1,13 @@
 class LeavesController < ApplicationController
   before_filter :authenticate_user!
   before_filter :manager_required, :only => [:leave_to_approve, :approve_leave]
+
+  def leave_history
+    @leaves = Leave.where("user_id =? AND end_date < ? ", current_user.id, Date.today )
+  end
   
   def index
-    @leaves = Leave.where(:user_id => current_user.id)
+    @leaves = Leave.where("user_id =? AND end_date >= ? ", current_user.id, Date.today )
   end
 
   def new

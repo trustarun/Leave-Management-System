@@ -3,7 +3,10 @@ LeaveManagementSystem::Application.routes.draw do
   root :to => "holidays#index"
   resources :holidays
   resources :leaves do
-    put 'approve_leave', :on => :member
+    member do
+      get 'leave_history'
+      put 'approve_leave'
+    end
     get 'leave_to_approve', :on => :collection
   end
 end
