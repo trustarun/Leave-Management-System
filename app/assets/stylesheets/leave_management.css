@@ -82,3 +82,8 @@ table a {color:greenFuchsia; text-decoration: none!important}
 .link_button a{text-decoration: none;color: black}
 
 select{width: 324px}
+
+ div.ui-datepicker
+ {
+   font-size: 10px;
+ }

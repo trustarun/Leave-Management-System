@@ -17,6 +17,15 @@
     }
 
 jQuery(document).ready(function(){
+            $('#txtDateFrom,#txtDateTo').datepicker({
+                changeYear: true,
+                beforeShow: function (textbox, instance) {
+                instance.dpDiv.css({
+                    marginTop: (-textbox.offsetHeight) + 'px',
+                    marginLeft: textbox.offsetWidth + 'px'
+                });
+                }
+            });
 
     $("#leave_start_date").datepicker({
         dateFormate : 'dd-mm-yy'
@@ -29,5 +38,5 @@ jQuery(document).ready(function(){
     $("#user_joining_date").datepicker({
         dateFormate : 'dd-mm-yy'
     });
-})
 
+})
