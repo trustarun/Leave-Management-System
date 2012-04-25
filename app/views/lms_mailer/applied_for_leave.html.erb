@@ -1,2 +1,20 @@
 
-<%= "applied_for_leave.html" %>
+<p> Hi <%=  @user.manager.name %></p><br />
+<%=  @user.name %> has applied for <%=  @leave.total_days %> leaves <br /><br/>
+
+The leave breakup is as below :<br />
+
+Working Days: <%=  @working_days.count %><br />
+<%=  @working_days.each do |wd| %>
+   <%=  wd.strftime("%d %b %y : %A") %><br />
+<%  end %><br /><br />
+
+Holiday Days: <%= @leave_days.count %><br />
+<%=  @leave_days.each do |ld| %>
+   <%=  ld.strftime("%d %b %y : %A") %><br />
+<%  end %>
+
+
+<br /><br />
+Thanks<br/>
+Leave Management Team

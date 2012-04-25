@@ -1,20 +1,12 @@
 <div class="l_row">
   <span class="l_label">
-    First Name<span class="mandatory">&nbsp;* &nbsp</span>
+    Name<span class="mandatory">&nbsp;* &nbsp</span>
   </span>
   <span class="r_label">
-    <%= f.text_field :first_name %>
+    <%= f.text_field :name %>
   </span>
 </div>
 
-<div class="l_row">
-  <span class="l_label">
-    Last Name<span class="mandatory">&nbsp;* &nbsp</span>
-  </span>
-  <span class="r_label">
-    <%= f.text_field :last_name %>
-  </span>
-</div>
 <div class="l_row">
   <span class="l_label">
     Email<span class="mandatory">&nbsp;* &nbsp</span>
@@ -46,7 +38,7 @@
     Role<span class="mandatory">&nbsp;* &nbsp</span>:
   </span>
   <span class="r_label">
-    <%= f.text_field :role_id %>
+    <%=f.select :role_id, options_from_collection_for_select(@role, "id", "name") %>
   </span>
 </div>
 
@@ -55,6 +47,25 @@
     Manager<span class="mandatory">&nbsp;* &nbsp</span>:
   </span>
   <span class="r_label">
-    <%= f.text_field :manager_id %>
+    <%= f.select :manager_id, options_from_collection_for_select(@manager, "id", "name") %>
+  </span>
+</div>
+
+
+<div class="l_row">
+  <span class="l_label">
+    Date of Joining<span class="mandatory"></span>
+  </span>
+  <span class="r_label">
+    <%= f.text_field :joining_date %>
+  </span>
+</div>
+
+<div class="l_row">
+  <span class="l_label">
+    Salary<span class="mandatory"></span>
+  </span>
+  <span class="r_label">
+    <%= f.text_field :salary %>
   </span>
 </div>

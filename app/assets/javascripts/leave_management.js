@@ -25,5 +25,9 @@ jQuery(document).ready(function(){
     $("#leave_end_date").datepicker({
         dateFormate : 'dd-mm-yy'
     });
+
+    $("#user_joining_date").datepicker({
+        dateFormate : 'dd-mm-yy'
+    });
 })
 

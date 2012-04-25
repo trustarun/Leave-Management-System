@@ -1,6 +1,7 @@
 class LeavesController < ApplicationController
   before_filter :authenticate_user!
   before_filter :manager_required, :only => [:leave_to_approve, :approve_leave]
+  
   def index
     @leaves = Leave.where(:user_id => current_user.id)
   end
@@ -11,16 +12,31 @@ class LeavesController < ApplicationController
 
   def create
     @leave = Leave.new(params[:leave])
+    p "#{params[:leave][:start_date].split("/")}"
+    p "KKKKKKKKKKKKKKKKKKKKKkk"
+    start_date = @leave.string_to_date(params[:leave][:start_date])
+    end_date = @leave.string_to_date(params[:leave][:end_date])
+    @working_day = working_day_leaves(start_date, end_date)
+    @holiday_day = Holiday.holiday_between_leaves(start_date, end_date)
     @leave.user_id = current_user.id
     @leave.manager_id = current_user.manager
     @leave.status = "pending"
+    @leave.working_days = @working_day.count
+    @leave.holiday_days = @holiday_day.count
+    @leave.total_days = @working_day.count + @holiday_day.count
     if @leave.valid?
       @leave.save
-      LmsMailer.applied_for_leave(@leave, current_user).deliver
+      LmsMailer.applied_for_leave(@leave, current_user, @working_day, @holiday_day).deliver
       redirect_to leaves_path
     else
       render 'new'
     end
+  end
+
+  def working_day_leaves(start_date, end_date)
+    holiday_array = Holiday.holiday_between_leaves(start_date, end_date)
+    leave_array = Leave.new.leave_array(start_date, end_date)
+    leave_array.reject{ |d| holiday_array.include?(d)}
   end
 
   def show
@@ -73,5 +89,5 @@ class LeavesController < ApplicationController
       redirect_to new_user_session_path
     end
   end
-  
+
 end

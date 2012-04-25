@@ -25,6 +25,8 @@ ActiveRecord::Schema.define(:version => 20120422064751) do
   create_table "leaves", :force => true do |t|
     t.date     "start_date"
     t.date     "end_date"
+    t.integer  "working_days"
+    t.integer  "holiday_days"
     t.integer  "total_days"
     t.text     "reason_for_leave"
     t.integer  "user_id"
@@ -48,8 +50,7 @@ ActiveRecord::Schema.define(:version => 20120422064751) do
 
   create_table "users", :force => true do |t|
     t.string   "email"
-    t.string   "first_name"
-    t.string   "last_name"
+    t.string   "name"
     t.string   "password"
     t.integer  "manager_id"
     t.integer  "role_id"

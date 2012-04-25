@@ -44,6 +44,18 @@ module LeaveCalender
     all_week << last_week
   end
 
+  def convert_to_date(year, month, day)
+    Date.new(year, month, day)
+  end
+
+  def actual_start_date(date)
+    (date.cwday == 1) ? (date << 2) : date
+  end
+
+  def actual_end_date(date)
+    (date.cwday == 5) ? (date >> 2) : date
+  end
+
   def day_of_week(year, month, day)
     Date.new(year, month, day).strftime("%a")
   end

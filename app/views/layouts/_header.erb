@@ -3,7 +3,7 @@
     <div class="logo"> Leave Management System </div>
     <% if current_user %>
       <div class="topMenu">
-        <span class="welcome"><%= current_user.full_name %> &nbsp;|&nbsp;</span>
+        <span class="welcome"><%= current_user.name %> &nbsp;|&nbsp;</span>
         <%= link_to 'Logout', destroy_user_session_path, :method => 'delete' %>
       </div>
     <%else%>

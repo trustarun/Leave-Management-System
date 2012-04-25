@@ -3,6 +3,10 @@ class Users::RegistrationsController < Devise::RegistrationsController
   before_filter :require_admin, :only => [:create, :new ]
   def new
     resource = build_resource({})
+    @role = Role.all
+    manager_role = Role.where(:name => "Manager")
+    @manager = User.where(:role_id => manager_role.id)
+    @manager << User.first if @manager.blank?
     respond_with resource
   end
 

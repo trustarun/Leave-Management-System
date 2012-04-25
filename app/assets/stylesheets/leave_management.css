@@ -80,3 +80,5 @@ table a {color:greenFuchsia; text-decoration: none!important}
 .set {color:red!important}
 .link_button{padding: 10px;background-color: fuchsia;}
 .link_button a{text-decoration: none;color: black}
+
+select{width: 324px}
