@@ -49,11 +49,25 @@ module LeaveCalender
   end
 
   def actual_start_date(date)
-    (date.cwday == 1) ? (date - 2) : date
+    original_date = date
+    date = date -1
+    count = 0
+    while Holiday.where(:day =>date.day, :month => date.month, :year => date.year).present?
+      date = date -1
+      count = count + 1
+    end
+    original_date - count
   end
 
   def actual_end_date(date)
-    (date.cwday == 5) ? (date + 2) : date
+    original_date = date
+    date = date + 1
+    count = 0
+    while Holiday.where(:day =>date.day, :month => date.month, :year => date.year).present?
+      date = date + 1
+      count = count + 1
+    end
+    original_date + count
   end
 
   def day_of_week(year, month, day)

@@ -8,7 +8,9 @@ class Holiday < ActiveRecord::Base
     day_name["no"]
   end
 
-  def self.holiday_between_leaves(start_date, end_date)
+  def holiday_between_leaves(start_date, end_date)
+    start_date = actual_start_date(start_date)
+    end_date = actual_end_date(end_date)
     if start_date.year != end_date.year
       start_month = Holiday.where(:month => start_date.month, :day => [start_date.day..31], :year => start_date.year )
       end_month = Holiday.where(:month => end_date.month, :day => [1..end_date.day], :year => end_date.year)

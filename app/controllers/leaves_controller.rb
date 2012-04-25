@@ -19,7 +19,7 @@ class LeavesController < ApplicationController
     start_date = @leave.string_to_date(params[:leave][:start_date])
     end_date = @leave.string_to_date(params[:leave][:end_date])
     @total_days = total_days_applied(start_date, end_date)
-    @holiday_day = Holiday.holiday_between_leaves(start_date, end_date)
+    @holiday_day = Holiday.new.holiday_between_leaves(start_date, end_date)
     @working_day = @total_days.reject{ |d| @holiday_day.include?(d)}
     @leave.user_id = current_user.id
     @leave.manager_id = current_user.manager
