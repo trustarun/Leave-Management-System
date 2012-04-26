@@ -7,6 +7,7 @@ gem 'execjs'
 gem 'therubyracer'
 gem 'jquery-rails'
 gem 'devise'
+gem 'pg'
 
 group :development do
   gem 'rspec-rails', '2.7.0'
