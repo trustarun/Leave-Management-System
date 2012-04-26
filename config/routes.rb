@@ -4,9 +4,11 @@ LeaveManagementSystem::Application.routes.draw do
   resources :holidays
   resources :leaves do
     member do
-      get 'leave_history'
       put 'approve_leave'
     end
-    get 'leave_to_approve', :on => :collection
+    collection do
+      get 'leave_history'
+      get 'leave_to_approve'
+    end
   end
 end

@@ -17,7 +17,7 @@
     <li><%= link_to 'Calender', holidays_path %></li>
     <li><%= link_to 'Apply', new_leafe_path %></li>
     <li><%= link_to 'Status', leaves_path %></li>
-    <li><%= link_to 'History', leave_history_leafe_path(current_user) %></li>
+    <li><%= link_to 'History', leave_history_leaves_path %></li>
     <% if current_user && current_user.is_manager? %>
       <li><%= link_to 'Approve Leave', leave_to_approve_leaves_path %></li>
     <%  end %>
